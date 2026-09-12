@@ -12,6 +12,8 @@ Successfully implemented and tested a 3-agent custom subagent system for Devin C
 4. Document the setup process and lessons learned
 5. Share the working configuration with the community
 
+**Testing Environment**: All development and testing was conducted using a **free Devin license**. This means premium models like Sonnet were not available during testing. The configurations provided use the default subagent model without explicit model specification, making them compatible with both free and paid licenses.
+
 ## Implementation Timeline
 
 ### Phase 1: Initial Setup (Completed)
@@ -82,6 +84,8 @@ Unified response with next steps
 - **Special**: max-nesting: 2 (can spawn other agents)
 - **Focus**: Decision logic, context passing, result synthesis
 
+**License Note**: All configurations use the default subagent model without explicit specification, making them compatible with both free and paid Devin licenses. This setup was tested with a free license, where premium models like Sonnet are not available. If you have a paid license, you can add `model: sonnet` (or other available models) to individual agent frontmatters to use premium models.
+
 ## Challenges and Solutions
 
 ### Challenge 1: Custom Subagents Not Starting
@@ -102,7 +106,9 @@ Unified response with next steps
 
 **Critical Step**: Reloading the Devin session was necessary for the custom agents to be recognized by the system. After creating the agent configuration files, a session restart allowed the system to properly load and register the custom subagent profiles.
 
-**Lesson Learned**: Custom subagent setup may require system processing time and session reload; persistence and iteration are key.
+**License Constraint**: All testing was conducted with a **free Devin license**, which means premium models like Sonnet are not available. The `model: sonnet` field had to be removed from configurations because it's not accessible in the free tier. The agents now use the default subagent model provided by the free license.
+
+**Lesson Learned**: Custom subagent setup may require system processing time and session reload; persistence and iteration are key. Additionally, model availability depends on your license tier.
 
 ### Challenge 2: Context Management
 
@@ -195,6 +201,7 @@ Users can expect similar detailed, coordinated outputs when using the orchestrat
 - Use `allowed-tools` to enforce focus and security
 - Set appropriate `max-nesting` limits to prevent complexity
 - Avoid explicit model specification unless necessary
+- Consider license tier when specifying models (free licenses cannot use premium models like Sonnet)
 
 ### Context Management
 - Be selective about context passing
