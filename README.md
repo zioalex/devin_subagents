@@ -31,7 +31,7 @@ When we first created the custom subagents, they failed to start. The built-in `
 ---
 name: orchestrator
 description: Coordinates between requirements-discuss and implementation-schedule agents
-model: sonnet  # This may have caused issues
+model: sonnet  # Not available in free license
 allowed-tools:
   - read
   - grep
@@ -56,6 +56,8 @@ allowed-tools:
 max-nesting: 2
 ---
 ```
+
+**Important Note**: All testing was done with a **free Devin license**, which means premium models like Sonnet are not available. The `model: sonnet` field was removed from configurations because it's not accessible in the free tier. The agents now use the default subagent model provided by the free license.
 
 ### Final Working Setup
 
@@ -118,6 +120,8 @@ The custom subagents eventually started working without clear indication of what
 - Keep it concise: summarize key points rather than passing entire conversation logs
 - Focus on essentials: original request, specific constraints, relevant files/components
 - Avoid overload: don't pass unnecessary history or tangential details
+
+**License Compatibility**: All three agents are configured without explicit model specifications, making them compatible with both free and paid Devin licenses. They use the default subagent model provided by your license tier. If you have a paid license, you can add `model: sonnet` (or other available models) to individual agent frontmatters to use premium models.
 
 ## How to Use
 
@@ -214,17 +218,20 @@ We successfully tested the system with a meal planning application request:
 
 3. **Restart your Devin session**: **Critical step** - Reload your Devin CLI session for custom agents to be recognized by the system
 
+**License Compatibility**: These agent configurations work with both free and paid Devin licenses. They use the default subagent model without explicit model specification. If you have a paid license and want to use premium models like Sonnet, you can add `model: sonnet` to the frontmatter of individual agent files.
+
 ## Troubleshooting
 
 If custom subagents fail to start:
 
 1. **Verify built-in subagents work**: Test with `subagent_explore`
 2. **Check YAML syntax**: Ensure frontmatter is properly formatted
-3. **Remove model field**: Try without explicit model specification
+3. **Remove model field**: Try without explicit model specification (especially if using free license)
 4. **Check tool permissions**: Ensure `allowed-tools` are valid
 5. **Wait for recognition**: System may need time to process custom agents
 6. **Restart session**: **Critical step** - Reload your Devin CLI session for custom agents to be recognized
 7. **Check configuration**: Verify YAML syntax and allowed-tools
+8. **License compatibility**: If you specify premium models like `model: sonnet`, ensure you have a paid license. Free licenses should use default subagent model (no explicit model field).
 
 ## Future Improvements
 
