@@ -212,7 +212,7 @@ We successfully tested the system with a meal planning application request:
    cp agents/*.md .agents/agents/
    ```
 
-3. Restart your Devin session if agents aren't recognized immediately
+3. **Restart your Devin session**: **Critical step** - Reload your Devin CLI session for custom agents to be recognized by the system
 
 ## Troubleshooting
 
@@ -223,7 +223,8 @@ If custom subagents fail to start:
 3. **Remove model field**: Try without explicit model specification
 4. **Check tool permissions**: Ensure `allowed-tools` are valid
 5. **Wait for recognition**: System may need time to process custom agents
-6. **Restart session**: Try restarting your Devin CLI session
+6. **Restart session**: **Critical step** - Reload your Devin CLI session for custom agents to be recognized
+7. **Check configuration**: Verify YAML syntax and allowed-tools
 
 ## Future Improvements
 

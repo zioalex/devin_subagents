@@ -100,7 +100,9 @@ Unified response with next steps
 - Session restart/configuration reload
 - Removal of explicit model field
 
-**Lesson Learned**: Custom subagent setup may require system processing time; persistence and iteration are key.
+**Critical Step**: Reloading the Devin session was necessary for the custom agents to be recognized by the system. After creating the agent configuration files, a session restart allowed the system to properly load and register the custom subagent profiles.
+
+**Lesson Learned**: Custom subagent setup may require system processing time and session reload; persistence and iteration are key.
 
 ### Challenge 2: Context Management
 
