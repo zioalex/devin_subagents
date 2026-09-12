@@ -154,6 +154,16 @@ Unified response with next steps
   - Example CLI usage
   - Future enhancement suggestions
 
+**Example Output**:
+![Orchestrator Agent Output](images/orchestrator-output.png)
+
+This image shows the actual output from the orchestrator agent, demonstrating the complete workflow:
+1. Requirements analysis and discussion
+2. Implementation scheduling and planning
+3. Synthesized results with comprehensive software development plan
+
+Users can expect similar detailed, coordinated outputs when using the orchestrator agent for their software development tasks.
+
 ### Test Case 3: Requirements Explanation
 
 **Request**: "Use the orchestrator agent to handle this: Explain how to use subagents in devin - limitation and benefit"
