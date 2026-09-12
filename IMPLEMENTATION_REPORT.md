@@ -100,7 +100,9 @@ Unified response with next steps
 - Session restart/configuration reload
 - Removal of explicit model field
 
-**Lesson Learned**: Custom subagent setup may require system processing time; persistence and iteration are key.
+**Critical Step**: Reloading the Devin session was necessary for the custom agents to be recognized by the system. After creating the agent configuration files, a session restart allowed the system to properly load and register the custom subagent profiles.
+
+**Lesson Learned**: Custom subagent setup may require system processing time and session reload; persistence and iteration are key.
 
 ### Challenge 2: Context Management
 
@@ -151,6 +153,16 @@ Unified response with next steps
   - 6-day implementation timeline
   - Example CLI usage
   - Future enhancement suggestions
+
+**Example Output**:
+![Orchestrator Agent Output](images/orchestrator-output.png)
+
+This image shows the actual output from the orchestrator agent, demonstrating the complete workflow:
+1. Requirements analysis and discussion
+2. Implementation scheduling and planning
+3. Synthesized results with comprehensive software development plan
+
+Users can expect similar detailed, coordinated outputs when using the orchestrator agent for their software development tasks.
 
 ### Test Case 3: Requirements Explanation
 
